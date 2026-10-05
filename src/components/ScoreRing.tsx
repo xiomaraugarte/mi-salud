@@ -1,3 +1,4 @@
+import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { StyleSheet, Text, View } from 'react-native';
@@ -7,8 +8,8 @@ export default function ScoreRing() {
     return (
         <View style={styles.ring}>
             <View style={styles.shield}>
-                <MaterialCommunityIcons
-                    name="shield-check-outline"
+                <AntDesign
+                    name="moon"
                     size={22}
                     color={colors.text}
                     style={styles.shieldIcon}
@@ -18,42 +19,42 @@ export default function ScoreRing() {
                 <MaterialCommunityIcons name="water-outline" size={20} color={colors.text} />
             </View>
             <View style={styles.stomach}>
-                <MaterialCommunityIcons
-                    name="stomach"
+                <AntDesign
+                    name="experiment"
                     size={22}
                     color={colors.text}
                     style={styles.stomachIcon}
                 />
             </View>
             <View style={styles.heart}>
-                <MaterialCommunityIcons
-                    name="heart-outline"
+                <AntDesign
+                    name="compass"
                     size={22}
                     color={colors.text}
                     style={styles.heartIcon}
                 />
             </View>
             <View style={styles.brain}>
-                <MaterialCommunityIcons
-                    name="brain"
+                <AntDesign
+                    name="bug"
                     size={22}
                     color={colors.text}
                     style={styles.brainIcon}
                 />
             </View>
             <View style={styles.lungs}>
-                <MaterialCommunityIcons name="lungs" size={22} color={colors.text} />
+                <AntDesign name="printer" size={22} color={colors.text} />
             </View>
             <View style={styles.dna}>
-                <MaterialCommunityIcons
-                    name="dna"
+                <AntDesign
+                    name="alert"
                     size={22}
                     color={colors.text}
                     style={styles.dnaIcon}
                 />
             </View>
             <View style={styles.bone}>
-                <MaterialCommunityIcons name="bone" size={20} color={colors.text} />
+                <AntDesign name="read" size={20} color={colors.text} />
             </View>
             <View style={styles.center}>
                 <Text style={styles.score}>8.8</Text>

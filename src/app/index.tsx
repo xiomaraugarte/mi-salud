@@ -1,6 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Actions from '../components/Actions';
+import AssistantCard from '../components/AssistantCard';
 import Header from '../components/Header';
 import ScoreRing from '../components/ScoreRing';
 import TabBar from '../components/TabBar';
@@ -13,6 +14,7 @@ export default function Index() {
       <View style={styles.content}>
         <ScoreRing />
         <Actions />
+        <AssistantCard />
         {/* COMPONENTS: add each one right above this line */}
       </View>
       <TabBar />
