@@ -3,10 +3,10 @@ export const colors = {
     text: '#fff3f3',
     textMuted: '#7A7468',
     dark: '#fff4f4',
-    soft: '#353535',
+    soft: '#3e2257',
     yellow: '#5b4900',
     green: '#252e00',
-    pink: '#001497',
-    blue: '#BCD0EF',
+    pink: '#3f0202',
+    blue: '#283e5f',
     alert: '#E4533B',
 };
