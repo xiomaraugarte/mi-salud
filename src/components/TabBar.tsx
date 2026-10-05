@@ -1,16 +1,17 @@
+import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { StyleSheet, View } from 'react-native';
 import { colors } from '../constants/colors';
 export default function TabBar() {
     return (
         <View style={styles.bar}>
-            <Ionicons name="heart-outline" size={24} color={colors.pink} />
-            <Ionicons name="calendar-clear-outline" size={22} color="#000000" />
+            <Ionicons name="camera" size={24} color={colors.pink} />
+            <AntDesign name="instagram" size={22} color="#000000" />
             <View style={styles.addButton}>
-                <Ionicons name="add" size={30} color={colors.dark} />
+                <Ionicons name="bulb" size={30} color={colors.dark} />
             </View>
-            <Ionicons name="chatbox-ellipses-outline" size={22} color="#000000" />
-            <Ionicons name="person-outline" size={22} color="#000000" />
+            <Ionicons name="car" size={22} color="#000000" />
+            <AntDesign name="coffee" size={22} color="#000000" />
         </View>
     );
 }
