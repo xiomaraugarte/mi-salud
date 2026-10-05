@@ -11,8 +11,8 @@ import { colors } from '../constants/colors';
 export default function Index() {
   return (
     <SafeAreaView style={styles.screen}>
-      <Header />
       <View style={styles.content}>
+        <Header />        
         <ScoreRing />
         <Actions />
         <AssistantCard />
