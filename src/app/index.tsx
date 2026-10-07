@@ -12,6 +12,10 @@ import { colors } from '../constants/colors';
 const [systems, setSystems] = useState<HealthSystem[]>([
   { name: 'Sistema endocrino', score: 8.3 },
 ]);
+function addSystem(name: string) {
+  const score = Math.round((5 + Math.random() * 5) * 10) / 10;
+  setSystems([...systems, { name, score }]);
+}
 
 export default function Index() {
   const [isAddOpen, setIsAddOpen] = useState(false);
@@ -26,7 +30,11 @@ export default function Index() {
         {/* COMPONENTS: add each one right above this line */}
       </View>
       <TabBar onAddPress={() => setIsAddOpen(true)} />
-      <AddSystemModal visible={isAddOpen} onClose={() => setIsAddOpen(false)} />
+      <AddSystemModal
+        visible={isAddOpen}
+        onClose={() => setIsAddOpen(false)}
+        onAdd={addSystem}
+      />
     </SafeAreaView>
   );
 }

@@ -1,10 +1,20 @@
+import { useState } from 'react';
 import { Modal, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { colors } from '../constants/colors';
 type Props = {
     visible: boolean;
     onClose: () => void;
+    onAdd: (name: string) => void;
 };
-export default function AddSystemModal({ visible, onClose }: Props) {
+
+export default function AddSystemModal({ visible, onClose, onAdd }: Props) {
+    const [name, setName] = useState('');
+    function handleAdd() {
+        if (name.trim() === '') return;
+        onAdd(name.trim());
+        setName('');
+        onClose();
+    }
     return (
         <Modal visible={visible} transparent animationType="fade" onRequestClose={onClose}>
             <View style={styles.overlay}>
@@ -15,9 +25,11 @@ export default function AddSystemModal({ visible, onClose }: Props) {
                         style={styles.input}
                         placeholder="Ej: Sistema digestivo"
                         placeholderTextColor={colors.textMuted}
+                        value={name}
+                        onChangeText={setName}
                     />
                     <View style={styles.buttons}>
-                        <Pressable style={styles.cancelButton} onPress={onClose}>
+                        <Pressable style={styles.addButton} onPress={handleAdd}>
                             <Text style={styles.cancelText}>Cancelar</Text>
                         </Pressable>
                         <Pressable style={styles.addButton} onPress={onClose}>
@@ -40,7 +52,7 @@ const styles = StyleSheet.create({
     title: { fontSize: 20, fontWeight: 'bold', color: colors.text },
     label: { fontSize: 14, color: colors.textMuted },
     input: {
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#727272',
         borderRadius: 12,
         paddingHorizontal: 14,
         height: 44,
