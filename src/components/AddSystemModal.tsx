@@ -57,5 +57,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: colors.dark,
     },
-    addText: { fontSize: 14, fontWeight: 'bold', color: '#FFFFFF' },
+    addText: { fontSize: 14, fontWeight: 'bold', color: '#000000' },
 });

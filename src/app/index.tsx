@@ -5,10 +5,13 @@ import Actions from '../components/Actions';
 import AddSystemModal from '../components/AddSystemModal';
 import AssistantCard from '../components/AssistantCard';
 import Header from '../components/Header';
-import HealthSystems from '../components/HealthSystems';
+import HealthSystems, { HealthSystem } from '../components/HealthSystems';
 import ScoreRing from '../components/ScoreRing';
 import TabBar from '../components/TabBar';
 import { colors } from '../constants/colors';
+const [systems, setSystems] = useState<HealthSystem[]>([
+  { name: 'Sistema endocrino', score: 8.3 },
+]);
 
 export default function Index() {
   const [isAddOpen, setIsAddOpen] = useState(false);
@@ -19,7 +22,7 @@ export default function Index() {
         <ScoreRing />
         <Actions />
         <AssistantCard />
-        <HealthSystems />
+        <HealthSystems systems={systems} />
         {/* COMPONENTS: add each one right above this line */}
       </View>
       <TabBar onAddPress={() => setIsAddOpen(true)} />

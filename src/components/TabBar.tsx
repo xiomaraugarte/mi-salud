@@ -12,7 +12,7 @@ export default function TabBar({ onAddPress }: Props) {
             <Ionicons name="camera" size={24} color={colors.pink} />
             <AntDesign name="instagram" size={22} color="#000000" />
             <Pressable style={styles.addButton} onPress={onAddPress}>
-                <Ionicons name="add" size={30} color={colors.dark} />
+                <Ionicons name="bulb" size={30} color={colors.dark} />
             </Pressable>
             <Ionicons name="car" size={22} color="#000000" />
             <AntDesign name="coffee" size={22} color="#000000" />
