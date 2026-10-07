@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Actions from '../components/Actions';
+import AddSystemModal from '../components/AddSystemModal';
 import AssistantCard from '../components/AssistantCard';
 import Header from '../components/Header';
 import HealthSystems from '../components/HealthSystems';
@@ -9,17 +11,19 @@ import TabBar from '../components/TabBar';
 import { colors } from '../constants/colors';
 
 export default function Index() {
+  const [isAddOpen, setIsAddOpen] = useState(false);
   return (
     <SafeAreaView style={styles.screen}>
       <View style={styles.content}>
-        <Header />        
+        <Header />
         <ScoreRing />
         <Actions />
         <AssistantCard />
         <HealthSystems />
         {/* COMPONENTS: add each one right above this line */}
       </View>
-      <TabBar />
+      <TabBar onAddPress={() => setIsAddOpen(true)} />
+      <AddSystemModal visible={isAddOpen} onClose={() => setIsAddOpen(false)} />
     </SafeAreaView>
   );
 }
