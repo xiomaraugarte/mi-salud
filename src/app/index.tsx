@@ -9,16 +9,17 @@ import HealthSystems, { HealthSystem } from '../components/HealthSystems';
 import ScoreRing from '../components/ScoreRing';
 import TabBar from '../components/TabBar';
 import { colors } from '../constants/colors';
-const [systems, setSystems] = useState<HealthSystem[]>([
-  { name: 'Sistema endocrino', score: 8.3 },
-]);
-function addSystem(name: string) {
-  const score = Math.round((5 + Math.random() * 5) * 10) / 10;
-  setSystems([...systems, { name, score }]);
-}
 
 export default function Index() {
   const [isAddOpen, setIsAddOpen] = useState(false);
+  const [systems, setSystems] = useState<HealthSystem[]>([
+    { name: 'Sistema endocrino', score: 8.3 },
+  ]);
+  function addSystem(name: string) {
+    const score = Math.round((5 + Math.random() * 5) * 10) / 10;
+    setSystems([...systems, { name, score }]);
+  }
+
   return (
     <SafeAreaView style={styles.screen}>
       <View style={styles.content}>

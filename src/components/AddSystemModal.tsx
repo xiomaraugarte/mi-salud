@@ -29,10 +29,10 @@ export default function AddSystemModal({ visible, onClose, onAdd }: Props) {
                         onChangeText={setName}
                     />
                     <View style={styles.buttons}>
-                        <Pressable style={styles.addButton} onPress={handleAdd}>
+                        <Pressable style={styles.addButton} onPress={onClose}>
                             <Text style={styles.cancelText}>Cancelar</Text>
                         </Pressable>
-                        <Pressable style={styles.addButton} onPress={onClose}>
+                        <Pressable style={styles.addButton} onPress={handleAdd}>
                             <Text style={styles.addText}>Agregar</Text>
                         </Pressable>
                     </View>
@@ -44,7 +44,7 @@ export default function AddSystemModal({ visible, onClose, onAdd }: Props) {
 const styles = StyleSheet.create({
     overlay: {
         flex: 1,
-        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+        backgroundColor: '#00000066',
         justifyContent: 'center',
         padding: 24,
     },
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     },
     buttons: { flexDirection: 'row', justifyContent: 'flex-end', gap: 8 },
     cancelButton: { paddingHorizontal: 16, height: 40, justifyContent: 'center' },
-    cancelText: { fontSize: 14, fontWeight: 'bold', color: colors.text },
+    cancelText: { fontSize: 14, fontWeight: 'bold', color: colors.textMuted },
     addButton: {
         paddingHorizontal: 18,
         height: 40,
