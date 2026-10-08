@@ -1,15 +1,19 @@
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { colors } from '../constants/colors';
-export default function TabBar() {
+
+type Props = {
+    onAddPress: () => void;
+};
+export default function TabBar({ onAddPress }: Props) {
     return (
         <View style={styles.bar}>
             <Ionicons name="camera" size={24} color={colors.pink} />
             <AntDesign name="instagram" size={22} color="#000000" />
-            <View style={styles.addButton}>
+            <Pressable style={styles.addButton} onPress={onAddPress}>
                 <Ionicons name="bulb" size={30} color={colors.dark} />
-            </View>
+            </Pressable>
             <Ionicons name="car" size={22} color="#000000" />
             <AntDesign name="coffee" size={22} color="#000000" />
         </View>
